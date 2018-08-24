@@ -1,11 +1,11 @@
 module Todo.Common.Types
 
 type ItemState =
-    | Creating
-    | Created
-    | Updating
-    | Updated
-    | Deleting
+    | Creating = 0
+    | Created = 1
+    | Updating = 2
+    | Updated = 3
+    | Deleting = 4
 
 type Item = {
     Value: string
@@ -13,8 +13,7 @@ type Item = {
     State: ItemState
 }
 
-type Model =
-    {
-        Value: string
-        Items: Item list
-    }
+type Model = {
+    Value: string
+    Items: Item list
+}

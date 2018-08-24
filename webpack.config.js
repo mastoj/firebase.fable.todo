@@ -61,7 +61,7 @@ module.exports = {
                 filename: 'style.css'
             }),
             new CopyWebpackPlugin([{
-                from: './static'
+                from: resolve('./src/Todo.App/static/')
             }])
         ]) : commonPlugins.concat([
             new webpack.HotModuleReplacementPlugin(),
@@ -70,11 +70,11 @@ module.exports = {
     resolve: {
         modules: [
             "node_modules/",
-            resolve("./node_modules/")
+            resolve("./src/Todo.App/node_modules/")
         ]
     },
     devServer: {
-        contentBase: resolve('./static/'),
+        contentBase: resolve('./src/Todo.App/static/'),
         publicPath: "/",
         port: 8080,
         hot: true,

@@ -1,0 +1,20 @@
+{
+  "name": "fulma-demo",
+  "version": "0.0.1",
+  "description": "Demo for Fulma",
+  "main": "index.js",
+  "repository": "git@github.com:MangelMaxime/fulma-demo.git",
+  "author": "Maxime Mangel",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "firebase": "^5.4.0",
+    "font-awesome": "^4.7.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  },
+  "devDependencies": {
+    "bulma": "^0.7.1"
+  }
+}

@@ -9,3 +9,6 @@ bin/
 output/
 .fake/
 temp/
+.firebase/
+public/
+functions/

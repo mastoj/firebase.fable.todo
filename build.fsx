@@ -10,17 +10,23 @@ open Fake.IO
 open Fake.IO.Globbing.Operators
 open Fake.JavaScript
 
+let projects = !!"src/**/*.fsproj"
+
 Target.create "Clean" (fun _ ->
     !! "src/**/bin"
     ++ "src/**/obj"
     ++ "public"
+    ++ "functions"
     |> Seq.iter Shell.cleanDir
 )
 
-Target.create "Install" (fun _ ->
-    DotNet.restore
-        (DotNet.Options.withWorkingDirectory __SOURCE_DIRECTORY__)
-        "fable_todo.sln"
+Target.create "Restore" (fun _ ->
+    projects
+    |> Seq.iter (fun p ->
+        DotNet.restore
+            (DotNet.Options.withWorkingDirectory __SOURCE_DIRECTORY__)
+            p
+    )
 )
 
 Target.create "YarnInstall" (fun _ ->
@@ -36,6 +42,10 @@ Target.create "Build" (fun _ ->
             "webpack --port free -- -p"
 
     if not result.OK then failwithf "dotnet fable failed with code %i" result.ExitCode
+
+    let functionsPackageJson = "./src/Todo.Functions/package.json"
+    let functionsFolder = "./functions"
+    Shell.copyFile functionsFolder functionsPackageJson
 )
 
 Target.create "Watch" (fun _ ->
@@ -50,7 +60,7 @@ Target.create "Watch" (fun _ ->
 
 // Build order
 "Clean"
-    ==> "Install"
+    ==> "Restore"
     ==> "YarnInstall"
     ==> "Build"
 

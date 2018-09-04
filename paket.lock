@@ -33,11 +33,10 @@ NUGET
     Fable.Import.Express (0.1)
       Fable.Import.Node (>= 0.1)
       NETStandard.Library (>= 1.6.1)
-    Fable.Import.Firebase.Admin (0.0.5)
+    Fable.Import.Firebase.Admin (0.0.8)
       Fable.Core
-      Fable.Import.Express
       FSharp.Core
-    Fable.Import.Firebase.Functions (0.0.5)
+    Fable.Import.Firebase.Functions (0.0.8)
       Fable.Core
       Fable.Import.Express
       Fable.Import.Firebase.Admin

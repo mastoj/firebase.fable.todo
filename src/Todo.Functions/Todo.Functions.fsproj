@@ -8,6 +8,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FirestoreHelpers.fs" />
+    <Compile Include="TodoDb.fs" />
     <Compile Include="ExpressHelpers.fs" />
     <Compile Include="App.fs" />
   </ItemGroup>

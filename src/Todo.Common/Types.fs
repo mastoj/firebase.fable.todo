@@ -1,5 +1,7 @@
 module Todo.Common.Types
 
+open Fable.Core
+
 type ItemState =
     | Creating
     | Created
@@ -7,6 +9,7 @@ type ItemState =
     | Updated
     | Deleting
 
+[<Pojo>]
 type Item = {
     Value: string
     Id: System.Guid

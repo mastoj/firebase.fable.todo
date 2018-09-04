@@ -3,6 +3,7 @@ storage:none
 framework: netstandard2.0
 
 nuget Fable.Import.Firebase.Functions
+nuget Fable.Import.Firebase.Admin
 nuget FSharp.Core redirects:force
 nuget Fable.Core
 nuget Fable.Elmish
@@ -12,6 +13,7 @@ nuget Fable.Elmish.Debugger
 nuget Fable.Elmish.HMR
 nuget Fable.React
 nuget Fulma prerelease
+nuget Fable.PowerPack
 
 group netcorebuild
     storage:none
